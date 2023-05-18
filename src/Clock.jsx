@@ -1,6 +1,6 @@
 // import useState from "react-redux";
 import React, { useEffect, useState } from 'react';
-import "../Clock.css";
+import "./Clock.css";
 
 const Clock = () => {
     const [time, setTime] = useState(new Date());
@@ -24,10 +24,23 @@ const Clock = () => {
 
     return (
         <div className="clock">
+            <div className="twelve">12</div>
+            <div className="one">.</div>
+            <div className="two">.</div>
+            <div className="three">3</div>
+            <div className="four">.</div>
+            <div className="five">.</div>
+            <div className="six">6</div>
+            <div className="seven">.</div>
+            <div className="eight">.</div>
+            <div className="nine">9</div>
+            <div className="ten">.</div>
+            <div className="eleven">.</div>
             <div className="hand hour" style={getRotationStyle(time.getHours() + time.getMinutes() / 60, 12)}></div>
             <div className="hand minute" style={getRotationStyle(time.getMinutes() + time.getSeconds() / 60, 60)}></div>
             <div className="hand second" style={getRotationStyle(time.getSeconds(), 60)}></div>
             <div className="digital-clock">{localTime}</div>
+
         </div>
     );
 };
